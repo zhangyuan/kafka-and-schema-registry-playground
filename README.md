@@ -1,5 +1,17 @@
 # Kafka and Schema Registry Playground
 
+## Boot up the environment
+
+```
+docker-compose up
+```
+
+Check the containers are up
+
+```
+docker ps
+```
+
 ## Play with Kafka
 
 ### Create Kafka Topic
@@ -43,12 +55,14 @@ docker-compose exec broker kafka-topics --create --topic bar --partitions 1 --re
 ```
 
 ### Consume messages with Kafka avro console consumer
+
 ```bash
 docker-compose exec schema-registry kafka-avro-console-consumer --topic bar --bootstrap-server broker:9092 --from-beginning  --partition 0
 ```
 
 ### Consume messages with Kafka console consumer
-```
+
+```bash
 docker-compose exec broker kafka-console-consumer --topic bar --bootstrap-server broker:9092 --from-beginning  --partition 0
 ```
 
